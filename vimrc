@@ -9,6 +9,7 @@ call vundle#begin()
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
+Plugin 'Valloric/YouCompleteMe'
 
 " Scala
 Plugin 'derekwyatt/vim-scala'
@@ -37,7 +38,7 @@ set rtp+=/Library/Python/2.7/site-packages/powerline/bindings/vim
 filetype plugin indent on
 syntax on
 set number
-set softtabstop=2 shiftwidth=2 expandtab
+set softtabstop=4 shiftwidth=4 expandtab
 
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_cpp_compiler = 'g++'
@@ -52,5 +53,7 @@ nnoremap <C-k> d$
 
 set guifont=Monaco:h12
 
-au BufNewFile,BufRead,BufEnter *.cpp,*.hpp set omnifunc=omni#cpp#complete#Main
+au BufNewFile,BufRead,BufEnter *.js,*.jsx set omnifunc=syntaxcomplete#Complete
+au BufNewFile,BufRead,BufEnter *.js,*.jsx let g:tern_map_keys=1
+au BufNewFile,BufRead,BufEnter *.js,*.jsx let g:tern_show_argument_hints="on_hold"
 

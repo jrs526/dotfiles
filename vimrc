@@ -10,6 +10,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'tpope/vim-abolish'
 
 " Scala
 Plugin 'derekwyatt/vim-scala'

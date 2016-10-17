@@ -11,6 +11,9 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'tpope/vim-abolish'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
 
 " Scala
 Plugin 'derekwyatt/vim-scala'
@@ -45,14 +48,36 @@ let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_cpp_compiler = 'g++'
 let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
 
+set laststatus=2
+set showtabline=2
+
+let g:ctrlp_custom_ignore = {
+    \ 'dir': '\v[\/](\.(git|hg|svn)|\_site|node_modules)$',
+    \ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg)$',
+\}
+
 nnoremap <Leader>s :%s/\<<C-r><C-w>\>//g<Left><Left>
 nnoremap <Leader>S :s/\<<C-r><C-w>\>//g<Left><Left>
-nnoremap <Leader>e :tabedit 
+nnoremap <Leader>e :e 
+nmap <F1> 1gt
+nmap <F2> 2gt
+nmap <F3> 3gt
+nmap <F4> 4gt
+nmap <F5> 5gt
+nmap <F6> 6gt
+nmap <F7> 7gt
+nmap <F8> 8gt
+nmap <F9> 9gt
+nmap <Leader>q :bd<CR>
 nnoremap <Leader>n :set number!<CR> 
+nnoremap <Leader>k :NERDTreeToggle<CR>
+nnoremap <Leader><Leader> :bnext<CR>
 nnoremap <C-a> ^
 nnoremap <C-k> d$
 
 set guifont=Monaco:h12
+set mouse=a
+set ttymouse=xterm2
 
 au BufNewFile,BufRead,BufEnter *.js,*.jsx set omnifunc=syntaxcomplete#Complete
 au BufNewFile,BufRead,BufEnter *.js,*.jsx let g:tern_map_keys=1

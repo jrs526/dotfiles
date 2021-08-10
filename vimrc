@@ -547,10 +547,5 @@ else
   let g:airline_symbols.linenr = ''
 endif
 
-let g:ale_linters = {
-\   'javascript': ['flow-language-server'],
-\}
-
-
 "Open nerdtree on start
 "autocmd vimenter * NERDTree
